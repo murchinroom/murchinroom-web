@@ -6,9 +6,9 @@ definePageMeta({
 
 <template>
   <LandingContainer>
-    <LandingHero></LandingHero>
-    <LandingCloudcomputing></LandingCloudcomputing>
-    <LandingMachinelearning></LandingMachinelearning>
+    <AppsHero></AppsHero>
+    <AppsBadPhoto></AppsBadPhoto>
+    <AppsNamebox></AppsNamebox>
     <LandingDevelopers></LandingDevelopers>
     <LandingLogos></LandingLogos>
     <LandingCta></LandingCta>

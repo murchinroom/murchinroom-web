@@ -14,29 +14,34 @@
 
     <div>
       <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight">
-        Marketing website done with Nuxt
+        murchinroom
       </h1>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        Nuxtship is a starter template for startups, marketing websites &
-        landing pages.<wbr /> Built with Nuxt & TailwindCSS. You can quickly
-        create any website with this starter.
+        Murchinroom products software solutions
+        include on-premises cloud computing, machine learning,
+        and a variety of toys for businesses and individuals.
+        <wbr />
+        Typically with CDFMLR serves as a reoccurring developer,
+        and the rest of the members are not fixed.
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <LandingLink
-          href="https://github.com/Gr33nW33n/nuxtship-template"
+          href="#Everything you need to start a website"
           target="_blank"
           rel="noopener"
-          >Get Started</LandingLink
+          >Our Creations</LandingLink
         >
         <LandingLink
           size="lg"
           styleName="outline"
           rel="noopener"
-          href="https://github.com/Gr33nW33n/nuxtship-template"
+          href="https://github.com/cdfmlr"
           target="_blank"
-          >View Repo</LandingLink
+          >GitHub Repos</LandingLink
         >
       </div>
     </div>
   </main>
 </template>
+<script setup lang="ts">
+</script>
