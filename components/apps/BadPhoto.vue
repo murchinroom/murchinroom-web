@@ -13,7 +13,7 @@
     </div>
 
     <div>
-      <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
+      <h2 id="BadPhoto" class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
         BadPhoto
       </h2>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
