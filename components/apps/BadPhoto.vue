@@ -1,10 +1,10 @@
 <template>
   <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
-    <div class="p-24 md:order-1 hidden md:block">
+    <div class="p-24 md:order-1  md:block">
       <img
-        class="rounded-full transition-transform transform hover:scale-125"
-        src="~/assets/img/hero.jpg"
-        alt="Starship starts the engine"
+        class="transition-transform transform hover:scale-150"
+        src="~/assets/img/BadPhoto-preview-light-dark.png"
+        alt="BadPhoto screenshots"
         loading="eager"
         format="avif"
         width="512"
@@ -13,9 +13,9 @@
     </div>
 
     <div>
-      <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight">
+      <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
         BadPhoto
-      </h1>
+      </h2>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
         Review your photos with on-device machine learning models
         to find out the bad ones (blurry, dark, and meaningless screenshots).
@@ -41,6 +41,7 @@
           </li>
         </ul>
       </p>
+
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <LandingLink
           href=""
@@ -51,6 +52,19 @@
       </div>
     </div>
   </main>
+  <div>
+    <div
+        class="flex gap-8 md:gap-16 items-center justify-center mt-8 flex-wrap"
+    >
+      <h3 class="text-center text-slate-500">
+        BadPhoto is built with:
+      </h3>
+      <span>Swift</span>
+      <span>SwiftUI</span>
+      <span>CoreML</span>
+    </div>
+    <br><br>
+  </div>
 </template>
 <script setup lang="ts">
 </script>

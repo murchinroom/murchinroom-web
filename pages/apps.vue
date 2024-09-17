@@ -9,8 +9,8 @@ definePageMeta({
     <AppsHero></AppsHero>
     <AppsBadPhoto></AppsBadPhoto>
     <AppsNamebox></AppsNamebox>
-    <LandingDevelopers></LandingDevelopers>
-    <LandingLogos></LandingLogos>
-    <LandingCta></LandingCta>
+    <AppsMureader></AppsMureader>
+<!--    <AppsMurecom></AppsMurecom>-->
+    <AppsMore></AppsMore>
   </LandingContainer>
 </template>

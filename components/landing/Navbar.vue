@@ -9,6 +9,10 @@ const menuitems = [
     path: "/apps",
   },
   {
+    title: "Projects",
+    path: "/projects",
+  },
+  {
     title: "Cloud",
     path: "#",
   },
