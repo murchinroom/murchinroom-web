@@ -13,8 +13,8 @@ const menuitems = [
     path: "/projects",
   },
   {
-    title: "Cloud",
-    path: "#",
+    title: "Solutions",
+    path: "/solutions",
   },
   {
     title: "Machine Learning",
@@ -32,10 +32,10 @@ const menuitems = [
   //   title: "About",
   //   path: "/about",
   // },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
+  // {
+  //   title: "Contact",
+  //   path: "/contact",
+  // },
 ];
 
 const open = ref(false);
@@ -77,7 +77,7 @@ const open = ref(false);
         class="w-full lg:w-auto mt-2 lg:flex lg:mt-0"
         :class="{ block: open, hidden: !open }"
       >
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
+        <ul class="flex flex-col lg:flex-row items-center lg:gap-3">
           <li v-for="item of menuitems">
             <a
               :href="item.path"
@@ -85,6 +85,11 @@ const open = ref(false);
             >
               {{ item.title }}
             </a>
+          </li>
+          <li>
+              <div class="flex flex-col lg:flex-row lg:gap-4 gap-4">
+                <LandingLink href="/contact" size="md">Contact</LandingLink>
+              </div>
           </li>
         </ul>
 <!--        <div class="lg:hidden flex items-center mt-3 gap-4">-->
@@ -94,12 +99,6 @@ const open = ref(false);
 <!--          <LandingLink href="#" size="md" block>Sign up</LandingLink>-->
 <!--        </div>-->
       </nav>
-<!--      <div>-->
-<!--        <div class="hidden lg:flex items-center gap-4">-->
-<!--          <a href="#">Log in</a>-->
-<!--          <LandingLink href="#" size="md">Sign up</LandingLink>-->
-<!--        </div>-->
-<!--      </div>-->
     </header>
   </LandingContainer>
 </template>
