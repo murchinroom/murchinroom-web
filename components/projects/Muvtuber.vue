@@ -41,9 +41,10 @@
         <span class="font-black text-slate-500">
           Let's just forget
         </span>
-        When I was 12 or something, I programmed a chatbot in Visual Basic,
+        When I was 12 or something, I programmed a chatbot in
+        the Beginners' All-purpose Symbolic Instruction Code,
         as my very first code project (excluding hello-worlds and exercises).
-        It was a simple rule-based chatbot, but it was fun.
+        It was a simple rule-based chatbot, but it is fun and unforgettable.
         <br /><br />
         <span class="font-black text-slate-500">
           The autumn night when we realized

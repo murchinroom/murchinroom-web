@@ -16,7 +16,7 @@
         <del>"murchinroom universe"</del>
         "machine & you", which indicates
         the projects are exploring the intersection of machine learning (or AI)
-        and human creativity (or art).
+        and human creativity (and emotion).
       </p>
     </div>
   </main>
