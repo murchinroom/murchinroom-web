@@ -3,7 +3,7 @@
     <div class="p-24 md:order-1 hidden md:block">
       <img
         class="rounded-full transition-transform transform hover:scale-125"
-        src="~/assets/img/hero.jpg"
+        src="~/assets/img/murchinroom-avatar.png"
         alt="Starship starts the engine"
         loading="eager"
         format="avif"
