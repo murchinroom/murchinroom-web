@@ -32,7 +32,7 @@
     </div>
 
     <div>
-      <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
+      <h2 id="murecom" class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
         murecom
       </h2>
 

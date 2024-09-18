@@ -23,7 +23,7 @@
     </div>
 
     <div>
-      <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
+      <h2 id="muvtuber" class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
         muvtuber
       </h2>
 
@@ -107,7 +107,7 @@
         class="flex gap-8 md:gap-16 items-center justify-center mt-0 flex-wrap"
     >
       <h3 class="text-center text-slate-500">
-        murecom is built with:
+        muvtuber is built with:
       </h3>
       <span>Docker</span>
       <span>Go</span>
