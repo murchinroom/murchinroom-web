@@ -25,22 +25,25 @@
         For photograph lovers, a more sophisticated model trained with masterpieces
         is available to help you filter out your best shots.
         <br /><br />
+      </p>
+      <div class="text-lg text-slate-600 max-w-xl">
         Coming soon:
-        <ul>
+        <ul style="display: block; list-style-type: disc; padding-left: 32px;">
           <li>
-            * Specific models for different types of photos, e.g., landscape,
+            Specific models for different types of photos, e.g., landscape,
             portrait, food, etc.
             And different models focusing on different aspects, e.g.,
             composition, lighting, etc.
             Makes it more explainable and accurate.
           </li>
           <li>
-            * Integrate with Multimodal Large Language Models
+            Integrate with Multimodal Large Language Models
             to explain why a photo is bad and how to improve it.
             This drives BadPhoto into your personal photography teacher (or critic).
           </li>
         </ul>
-      </p>
+      </div>
+
 
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <LandingLink
