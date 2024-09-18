@@ -17,12 +17,12 @@ const menuitems = [
     path: "/solutions",
   },
   {
-    title: "Machine Learning",
-    path: "#",
+    title: "Misc",
+    path: "/misc",
   },
   {
-    title: "Tools & Libraries",
-    path: "#",
+    title: "Blogs",
+    path: "/blogs",
   },
   // {
   //   title: "Pricing",
