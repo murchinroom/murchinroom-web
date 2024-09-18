@@ -9,7 +9,7 @@
 <!--      Other apps are listed-->
     </p>
     <div class="flex mt-5">
-      <LandingLink class="me-4" href="/projects" styleName="inverted">Projects</LandingLink>
+      <LandingLink class="me-4" href="/apps" styleName="inverted">Apps</LandingLink>
       <LandingLink href="https://github.com/cdfmlr" styleName="inverted">GitHub</LandingLink>
     </div>
   </div>
