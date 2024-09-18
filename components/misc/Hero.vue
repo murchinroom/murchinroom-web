@@ -5,7 +5,7 @@
         Misc.
       </h1>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        murchinroom utils for developers and users.
+        murchinroom utils for everyone.
         <br /> <br />
       </p>
     </div>
