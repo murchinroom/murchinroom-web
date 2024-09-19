@@ -16,28 +16,43 @@
       <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight">
         murchinroom
       </h1>
+
+      <span class="font-thin text-slate-500">
+        a magic shop where the art meets AI.
+      </span>
+      <br />
+
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        Murchinroom products software solutions
-        include on-premises cloud computing, machine learning,
-        and a variety of toys for businesses and individuals.
-        <wbr />
         Typically with CDFMLR serves as a reoccurring developer,
-        and the rest of the members are not fixed.
+        and the rest of the members are not fixed,
+        murchinroom fuse creativity with technology
+        to explore the intersection
+        between humans and machines
+        by produces open-source projects and apps
+        that are fun in nature.
+        The
+        <a href="/projects#muvtuber">AI VTuber</a>
+        and
+        <a href="/projects#murecom">emotion-aware music recommendation</a>
+        are two of the most popular projects showing our philosophy.
+      </p>
+      <p class="text-lg mt-4 text-slate-600 max-w-xl">
+        murchinroom excels in crafting innovation applications as much as
+        we specialize in delivering professional high-performance computing,
+        on-premises cloud computing and machine learning solutions
+        for businesses and individuals.
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
-        <LandingLink
-          href="#Everything you need to start a website"
-          target="_blank"
-          rel="noopener"
-          >Our Creations</LandingLink
-        >
+        <LandingLink href="#aboutus">
+          About murchinroom
+        </LandingLink>
         <LandingLink
           size="lg"
           styleName="outline"
           rel="noopener"
           href="https://github.com/cdfmlr"
           target="_blank"
-          >GitHub Repos</LandingLink
+          >GitHub repositories</LandingLink
         >
       </div>
     </div>

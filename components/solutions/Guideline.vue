@@ -17,7 +17,16 @@ const features = [
         "Integrate heterogeneous database management systems and file systems. " +
         "Access to distributed storage assets under a unified namespace. " +
         "Manage data with automate workflows and policies.",
-    icon: "bx:bxs-network-chart",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "LLM Application Platform",
+    status: "beta",
+    description:
+        "Build and deploy your own LLM applications. " +
+        "And enhance the performance by prompt engineering, fine tuning, " +
+        "retrieval-augmented generation and Multi-agent system.",
+    icon: "bx:bxs-bot",
   },
   // {
   //   title: "RESTful user management for FTP",
@@ -46,19 +55,19 @@ const features = [
   },
   // dev
   {
-    title: "RESTful API Gateway for CLI apps",
+    title: "RESTful API Gateway for CLI Apps",
     status: "dev",
     description:
         "Remotely call your CLI apps with a RESTful API. Share your scripts with others without exposing your server.",
     icon: "bx:bxs-terminal",
   },
-  {
-    title: "RESTful API Gateway for SQL DBs",
-    status: "dev",
-    description:
-        "Expose your data in SQL databases as RESTful APIs. No code for simple use cases or low code for complex real-world scenarios.",
-    icon: "bx:bxs-cylinder",
-  },
+  // {
+  //   title: "RESTful API Gateway for SQL DBs",
+  //   status: "dev",
+  //   description:
+  //       "Expose your data in SQL databases as RESTful APIs. No code for simple use cases or low code for complex real-world scenarios.",
+  //   icon: "bx:bxs-cylinder",
+  // },
 
 ];
 </script>

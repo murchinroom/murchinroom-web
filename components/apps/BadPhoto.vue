@@ -13,7 +13,7 @@
     </div>
 
     <div>
-      <h2 id="BadPhoto" class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
+      <h2 id="badphoto" class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
         BadPhoto
       </h2>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
@@ -26,8 +26,8 @@
         is available to help you filter out your best shots.
         <br /><br />
       </p>
-      <div class="text-lg text-slate-600 max-w-xl">
-        Coming soon:
+      <div class="text-slate-600 max-w-xl">
+        <span class="text-lg">Coming soon:</span>
         <ul style="display: block; list-style-type: disc; padding-left: 32px;">
           <li>
             Specific models for different types of photos, e.g., landscape,

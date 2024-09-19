@@ -3,14 +3,14 @@
     class="bg-black px-20 py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center"
   >
     <h2 class="text-white text-3xl md:text-6xl">
-      Software Engineering
+      Let's build something together.
     </h2>
     <p class="text-slate-500 mt-4 text-lg md:text-xl">
-      From ideas to applications.
-      We developers are here to help you make the code complete.
+      Join us to build the next big thing.
+      From ideas to applications, making the code complete.
     </p>
     <div class="flex mt-5">
-      <LandingLink href="/contact" styleName="inverted">Contact Us</LandingLink>
+      <LandingLink href="/contact" styleName="inverted">Contact us</LandingLink>
     </div>
   </div>
 </template>
