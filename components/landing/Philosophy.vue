@@ -9,7 +9,7 @@ const features = [
     icon: "bx:bxs-server",
   },
   {
-    title: "Containerize and cloud native",
+    title: "Containerization and cloud native",
     status: "deployment & operations",
     description:
         "murchinroom embraces the containerization technology and cloud native principles." +

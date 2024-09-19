@@ -1,6 +1,6 @@
 <template>
-  <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
-    <div class="p-24 md:order-1 hidden md:block">
+  <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8 max-sm:pt-2">
+    <div class="p-24 md:order-1 md:block max-sm:p-8">
       <img
         class="rounded-full transition-transform transform hover:scale-125"
         src="~/assets/img/murchinroom-avatar.png"

@@ -1,8 +1,8 @@
 <template>
   <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
-    <div class="8 md:order-1 md:block">
+    <div class="p-4 md:order-1 md:block">
       <img
-        class="transition-transform transform hover:scale-105"
+        class="transition-transform transform hover:scale-105 p-2 max-sm:max-w-xs"
         src="~/assets/img/emotext.png"
         alt="emotext illustration"
         loading="eager"
@@ -34,11 +34,11 @@
 
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <LandingIconLink
-            class="font-mono"
+            class="font-mono max-sm:text-sm"
             style-name="outline"
             href="https://github.com/murchinroom/emotext"
             icon="simple-icons:python">
-          git clone https://github.com/murchinroom/emotext
+          git clone https://github.com/cdfmlr/emotext
         </LandingIconLink>
       </div>
     </div>

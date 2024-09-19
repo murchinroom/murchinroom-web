@@ -1,8 +1,8 @@
 <template>
   <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
-    <div class="p-24 md:order-1  md:block">
+    <div class="p-24 md:order-1 md:block max-sm:grid max-sm:grid-cols-2 max-sm:items-center max-sm:p-4">
       <img
-          class="transition-transform transform hover:scale-105"
+          class="transition-transform transform hover:scale-105 max-sm:w-11/12"
           src="../../assets/img/muvtuber-impl.png"
           alt="BadPhoto screenshots"
           loading="eager"
@@ -10,10 +10,10 @@
           width="512"
           height="512"
       />
-      <div class="mt-8"></div>
-      <div class="mt-44 hidden md:block"></div>
+      <div class="mt-8 max-sm:hidden"></div>
+      <div class="mt-44 max-sm:hidden hidden md:block"></div>
       <img
-          class="transition-transform transform hover:scale-105"
+          class="transition-transform transform hover:scale-105 max-sm:w-11/12"
           src="../../assets/img/muvtuber-obs.png"
           alt="BadPhoto screenshots"
           loading="eager"
