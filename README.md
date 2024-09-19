@@ -78,6 +78,16 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## Static Site Generation
+
+Docs: [Static Hosting](https://nuxt.com/docs/getting-started/deployment#static-hosting)
+
+```bash
+pnpm nuxi generate
+# or
+pnpm run generate-static
+```
+
 ## Template
 
 This site is built with [Gr33nW33n/nuxtship-template](https://github.com/Gr33nW33n/nuxtship-template)
