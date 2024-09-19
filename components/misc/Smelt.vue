@@ -4,8 +4,8 @@
       <img
         class="transition-transform transform hover:scale-105 max-sm:max-w-xs"
         src="~/assets/img/smelt.png"
-        alt="configer illustration"
-        loading="eager"
+        alt="smelt illustration"
+        loading="lazy"
         format="avif"
         width="512"
         height="512"

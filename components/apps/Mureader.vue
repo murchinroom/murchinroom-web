@@ -5,7 +5,7 @@
         class="transition-transform transform hover:scale-150"
         src="~/assets/img/mureader-preview.png"
         alt="BadPhoto screenshots"
-        loading="eager"
+        loading="lazy"
         format="avif"
         width="384"
         height="384"

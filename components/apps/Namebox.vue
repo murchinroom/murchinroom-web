@@ -5,7 +5,7 @@
         class="transition-transform transform hover:scale-150"
         src="~/assets/img/Namebox-preview.png"
         alt="A screenshot on the Namebox app"
-        loading="eager"
+        loading="lazy"
         format="avif"
         width="512"
         height="512"

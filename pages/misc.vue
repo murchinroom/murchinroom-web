@@ -7,13 +7,13 @@ definePageMeta({
 <template>
   <LandingContainer>
     <MiscHero></MiscHero>
-    <MiscPyflowchart></MiscPyflowchart>
-    <MiscCrud></MiscCrud>
-    <MiscEmotext></MiscEmotext>
-    <MiscEllipsis></MiscEllipsis>
-    <MiscConfiger></MiscConfiger>
-    <MiscSmelt></MiscSmelt>
-    <MiscPish></MiscPish>
+    <LazyMiscPyflowchart></LazyMiscPyflowchart>
+    <LazyMiscCrud></LazyMiscCrud>
+    <LazyMiscEmotext></LazyMiscEmotext>
+    <LazyMiscEllipsis></LazyMiscEllipsis>
+    <LazyMiscConfiger></LazyMiscConfiger>
+    <LazyMiscSmelt></LazyMiscSmelt>
+    <LazyMiscPish></LazyMiscPish>
 
 <!--    <ul class="flex gap-8 md:gap-20 items-center justify-center mt-16 flex-wrap text-red-600">-->
 <!--      TODO:-->

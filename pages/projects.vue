@@ -7,9 +7,9 @@ definePageMeta({
 <template>
   <LandingContainer>
     <ProjectsHero></ProjectsHero>
-    <ProjectsMuvtuber></ProjectsMuvtuber>
-    <ProjectsMurecom></ProjectsMurecom>
-    <ProjectsMusharing></ProjectsMusharing>
-    <ProjectsMore></ProjectsMore>
+    <LazyProjectsMuvtuber></LazyProjectsMuvtuber>
+    <LazyProjectsMurecom></LazyProjectsMurecom>
+    <LazyProjectsMusharing></LazyProjectsMusharing>
+    <LazyProjectsMore></LazyProjectsMore>
   </LandingContainer>
 </template>

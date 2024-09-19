@@ -7,7 +7,7 @@ definePageMeta({
 <template>
   <LandingContainer>
     <SolutionsHero></SolutionsHero>
-    <SolutionsGuideline></SolutionsGuideline>
-    <SolutionsMore></SolutionsMore>
+    <LazySolutionsGuideline></LazySolutionsGuideline>
+    <LazySolutionsMore></LazySolutionsMore>
   </LandingContainer>
 </template>

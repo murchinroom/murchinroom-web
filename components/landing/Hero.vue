@@ -5,7 +5,7 @@
         class="rounded-full transition-transform transform hover:scale-125"
         src="~/assets/img/murchinroom-avatar.png"
         alt="Starship starts the engine"
-        loading="eager"
+        loading="lazy"
         format="avif"
         width="512"
         height="512"

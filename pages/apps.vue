@@ -7,10 +7,10 @@ definePageMeta({
 <template>
   <LandingContainer>
     <AppsHero></AppsHero>
-    <AppsBadPhoto></AppsBadPhoto>
-    <AppsNamebox></AppsNamebox>
-    <AppsMureader></AppsMureader>
+    <LazyAppsBadPhoto></LazyAppsBadPhoto>
+    <LazyAppsNamebox></LazyAppsNamebox>
+    <LazyAppsMureader></LazyAppsMureader>
 <!--    <AppsMurecom></AppsMurecom>-->
-    <AppsMore></AppsMore>
+    <LazyAppsMore></LazyAppsMore>
   </LandingContainer>
 </template>

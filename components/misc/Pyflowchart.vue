@@ -5,7 +5,7 @@
         class="transition-transform transform hover:scale-105 max-sm:max-w-xs"
         src="~/assets/img/pyflowchart.png"
         alt="pyflowchart illustration"
-        loading="eager"
+        loading="lazy"
         format="avif"
         width="512"
         height="512"
