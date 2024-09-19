@@ -10,7 +10,8 @@
           width="512"
           height="512"
       />
-      <div class="mt-52"></div>
+      <div class="mt-8"></div>
+      <div class="mt-44 hidden md:block"></div>
       <img
           class="transition-transform transform hover:scale-105"
           src="../../assets/img/muvtuber-obs.png"
