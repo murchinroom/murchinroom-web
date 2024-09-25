@@ -4,7 +4,7 @@ const features = [
     title: "Keep it simple, stupid",
     status: "software engineering",
     description:
-        "murchinroom builds software with the UNIX philosophy and complexity management in mind." +
+        "murchinroom builds software with the UNIX philosophy and complexity management in mind. " +
         "We believe in the power of small, modular, and composable software components (or microservices).",
     icon: "bx:bxs-server",
   },
@@ -12,7 +12,7 @@ const features = [
     title: "Containerization and cloud native",
     status: "deployment & operations",
     description:
-        "murchinroom embraces the containerization technology and cloud native principles." +
+        "murchinroom embraces the containerization technology and cloud native principles. " +
         "We build, deploy, and scale our applications with Docker, Kubernetes, and other cloud services.",
     icon: "bx:bxs-package",
   },
@@ -38,7 +38,7 @@ const features = [
     <p class="text-lg mt-4 text-slate-600">
       Growing up with The Art of Unix Programming in hand,
       murchinroom focuses on exploring the new AI / cloud technologies and
-      tries to apply them to our daily life, in a way that is simple, elegant
+      tries to apply them to our daily life, in a way that is really simple, elegant
       and fun.
     </p>
   </div>

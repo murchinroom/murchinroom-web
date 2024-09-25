@@ -106,5 +106,15 @@ const pricing = [
         </a>
       </div>
     </div>
+    <div class="self-center max-w-full flex flex-col w-full mb-16 md:ps-24 md:pe-24">
+      <LandingLink
+          class=""
+          size="lg"
+          styleName="outline"
+          rel="noopener"
+          href="/misc">
+        And there are more free and open-source utilities
+      </LandingLink>
+    </div>
   </LandingContainer>
 </template>

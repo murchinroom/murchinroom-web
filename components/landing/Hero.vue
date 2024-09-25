@@ -31,10 +31,10 @@
         by produces open-source projects and apps
         that are fun in nature.
         The
-        <a href="/projects#muvtuber">AI VTuber</a>
+        <a href="/projects#muvtuber" class="font-light">AI VTuber</a>
         and
-        <a href="/projects#murecom">emotion-aware music recommendation</a>
-        are two of the most popular projects showing our philosophy.
+        <a href="/projects#murecom" class="font-light">emotion-aware music recommendation</a>
+        are two of the most popular projects showing our philosophy and technology.
       </p>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
         murchinroom excels in crafting innovation applications as much as

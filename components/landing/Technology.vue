@@ -42,7 +42,7 @@
   <div class="mt-12 md-64 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
     <LandingLink
         class="self-center"
-        href="/projects">
+        href="/solutions">
       See more technologies we use in our solutions
     </LandingLink>
   </div>
