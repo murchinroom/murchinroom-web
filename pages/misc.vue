@@ -14,6 +14,7 @@ definePageMeta({
     <LazyMiscConfiger></LazyMiscConfiger>
     <LazyMiscSmelt></LazyMiscSmelt>
     <LazyMiscPish></LazyMiscPish>
+    <LazyMiscSimplecipher></LazyMiscSimplecipher>
 
 <!--    <ul class="flex gap-8 md:gap-20 items-center justify-center mt-16 flex-wrap text-red-600">-->
 <!--      TODO:-->
