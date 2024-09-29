@@ -1,7 +1,7 @@
 # update npm's package-lock.json (though we don't use it)
 # to avoid unnecessary dependabot alerts
 
-name: package-lock.json update
+name: Update package-lock.json
 on:
   # Runs on pushes targeting the default branch
   push:
