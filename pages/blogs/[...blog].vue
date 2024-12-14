@@ -7,7 +7,7 @@ definePageMeta({
 <template>
   <LandingContainer>
     <!--    <BlogsHero></BlogsHero>-->
-
+    <BlogsNavbar></BlogsNavbar>
     <div class="blog-content">
       <ContentDoc>
         <template v-slot="{ doc }">
