@@ -66,24 +66,23 @@ const pricing = [
       </h2>
       <p class="text-lg mt-4 text-slate-600">
         murchinroom develops software in various domains, including
-        machine learning application, cloud computing infrastructure,
+        machine learning applications, cloud computing infrastructure,
         and more.
 
         <br /><br />
 
-        Treat computers as our friends, instead of tools,
-        we are especially interested in exploring the AI technologies,
-        researching the interaction between the art & machine learning,
-        and trying to build simple, elegant, and fun applications with them.
+        We treat computers as friends rather than tools. So,
+        we are particularly interested in exploring AI technologies,
+        researching the intersection of art and machine learning,
+        and building simple, elegant, and fun applications with these technologies.
 
-        Built on the top of proven open-source technologies,
-        most of our works on these fields
-        are open-source and free to the public.
+        Built on top of proven open-source technologies,
+        most of our work in these fields is open-source and free to the public.
 
         <br /><br />
 
-        Another focus of us is to build secure and reliable cloud infrastructures.
-        We figure out solutions for ourselves and willing to share them with customers.
+        Another focus of ours is to build secure and reliable cloud infrastructure.
+        We develop solutions for ourselves and are willing to share them with customers.
 
       </p>
     </div>

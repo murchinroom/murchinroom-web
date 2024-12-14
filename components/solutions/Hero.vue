@@ -10,17 +10,16 @@
 
         <br /> <br />
 
-        Cloud computing have changed the way people build and deploy software.
-        Cloud paradigm made it easier to scale,
-        more agile in development, integration & deployment,
-        and (maybe) reducing the cost of infrastructure.
-        However it also introduced dependencies on third-party services.
+        Cloud computing has revolutionized how people build and deploy software.
+        This shift has made development processes more agile,
+        integration smoother, scaling simpler,
+        and potentially reduced (or increased) infrastructure costs.
+        However, it also introduces dependencies on third-party platforms.
 
         <br /> <br />
-
-        murchinroom stands with forks concerning their privacy and data ownership.
-        We provide on-premises cloud computing solutions that deploy
-        on your own servers, giving you full control over your data.
+        murchinroom understands the concerns about privacy and data ownership.
+        We provide on-premises cloud computing solutions that
+        can be deployed on your own servers, giving you full control over your data.
       </p>
     </div>
   </main>

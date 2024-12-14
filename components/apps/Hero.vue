@@ -7,15 +7,14 @@
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
         murchinroom produces apps for mobile, desktop, and web.
         <br /> <br />
-        We capture our ideas from the daily life of ourselves,
-        trying to find ways to improve our productivity and creativity
-        in a wide range of fields, including software development, photography,
-        book reading, and more.
+        We draw inspiration from our daily lives, aiming to enhance productivity
+        and creativity in various fields, including software development,
+        photography, book reading, and more.
         <br /> <br />
-        Combining the power of machine learning and software craftsmanship,
-        we distill our ideas into apps that are simple, elegant, and useful.
-        We enjoy the process of building them and have fun using them.
-        Hope they can inspire you too.
+        By blending the power of machine learning with software craftsmanship,
+        we transform our ideas into simple, elegant, and useful apps.
+        We enjoy building them and find great pleasure in using them ourselves.
+        We hope they inspire you too.
       </p>
     </div>
   </main>

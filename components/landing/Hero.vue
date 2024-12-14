@@ -18,29 +18,31 @@
       </h1>
 
       <span class="font-thin text-slate-500">
-        a magic shop where the art meets AI.
+        a magic shop where art meets AI.
       </span>
       <br />
 
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        Typically with CDFMLR serves as a reoccurring developer,
-        and the rest of the members are not fixed,
-        murchinroom fuse creativity with technology
+        Typically, with CDFMLR serving as a recurring developer
+        and the rest of the members being not fixed,
+        murchinroom fuses creativity with technology
         to explore the intersection
         between humans and machines
-        by produces open-source projects and apps
+        by producing open-source projects and apps
         that are fun in nature.
+
         The
         <a href="/projects#muvtuber" class="font-light">AI VTuber</a>
         and
         <a href="/projects#murecom" class="font-light">emotion-aware music recommendation</a>
-        are two of the most popular projects showing our philosophy and technology.
+        are two of our most popular projects,
+        showcasing our philosophy and technological prowess.
       </p>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        murchinroom excels in crafting innovation applications as much as
-        we specialize in delivering professional high-performance computing,
-        on-premises cloud computing and machine learning solutions
-        for businesses and individuals.
+        In addition to our innovations,
+        murchinroom also offers various professional software solutions,
+        including high-performance computing, on-premises cloud computing,
+        and machine learning services for businesses and individuals.
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <LandingLink href="#aboutus">

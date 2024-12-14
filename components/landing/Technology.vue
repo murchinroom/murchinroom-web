@@ -8,18 +8,19 @@
       <!--<span class="text-2xl text-slate-500"> for business</span>-->
     </h2>
     <p class="text-lg mt-4 text-slate-600">
-      murchinroom builds software with a wide range of
+      murchinroom builds software using a broad range of
       modern open-source technologies and tools.
       <br /><br />
-      We implement backend services with Go, Python, etc.
-      and deploy them with Docker and Kubernetes.
+      We implement backend services with Go, Python, etc,
+      and deploying them with Docker and Kubernetes.
 
-      Redis and PostgreSQL are our favorite databases.
-      We also use MongoDB and MySQL in legacy projects and specific use cases.
+      Our preferred databases are Redis and PostgreSQL,
+      but we also utilize MongoDB and MySQL for legacy projects and specific use cases.
 
-      Our frontend applications are developed
-      with Vue.js for web, Swift for Apple platforms
-      and Flutter for cross-platform, etc.
+      For frontend development,
+      we create web applications with Vue.js,
+      Apple platform applications with Swift,
+      and cross-platform applications with Flutter.
     </p>
   </div>
 

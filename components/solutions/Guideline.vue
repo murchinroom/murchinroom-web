@@ -7,7 +7,7 @@ const features = [
     description:
       "Virtualizes all your hardware resources " +
         "into a single software-defined Hyper-Converged Infrastructure system. " +
-        "Manage your clusters with storage, networking, and compute at a integrated panel.",
+        "Manage your clusters with storage, networking, and compute at one integrated panel.",
     icon: "bx:bxs-server",
   },
   {
@@ -25,7 +25,7 @@ const features = [
     description:
         "Build and deploy your own LLM applications. " +
         "And enhance the performance by prompt engineering, fine tuning, " +
-        "retrieval-augmented generation and Multi-agent system.",
+        "retrieval-augmented generation and Multi-agent systems.",
     icon: "bx:bxs-bot",
   },
   // {
@@ -42,7 +42,7 @@ const features = [
     description:
         "Connect your on-premises & cloud infrastructure with a secure zero-trust network. " +
         "Manage all the devices in Virtual Private Networks. " +
-        "And keep data safe with end-to-end encryption.",
+        "And keep your data safe with end-to-end encryption.",
     icon: "bx:bxs-network-chart",
   },
   {
@@ -50,7 +50,7 @@ const features = [
     status: "alpha",
     description:
       "Deploy and manage your containerized applications with Kubernetes. " +
-        "Scale your applications with ease and keep them running with high availability.",
+        "Scale your services easily and keep them running with high availability.",
     icon: "bx:bxs-package",
   },
   // dev
@@ -58,7 +58,7 @@ const features = [
     title: "RESTful API Gateway for CLI Apps",
     status: "dev",
     description:
-        "Remotely call your CLI apps with a RESTful API. Share your scripts with others without exposing your server.",
+        "Remotely call your CLI apps with RESTful API. Share your system with others without exposing your server too much.",
     icon: "bx:bxs-terminal",
   },
   // {
