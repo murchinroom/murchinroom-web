@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     sources: {
       // default source is the `content` directory: not used.
       // Additional sources: SRC:/public/blogs/**/*.md -> DST_URL/blogs/**/*
-      blog: {
+      blogs: {
         prefix: '/blogs/',
         driver: 'fs',
         // Put blogs under public: support Markdown documents
@@ -27,5 +27,8 @@ export default defineNuxtConfig({
         base: resolve(__dirname, 'public/blogs')
       }
     },
+    navigation: {
+      fields: ['updated']
+    }
   }
 });
