@@ -25,7 +25,6 @@ const articles = useAsyncData('blogsQuery',
 
 // console.log("articles", articles, articles.value?.length)
 
-
 </script>
 
 <template>
@@ -43,36 +42,10 @@ const articles = useAsyncData('blogsQuery',
       <div class="grid grid-flow-row gap-4 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 items-center place-items-center">
         <div v-for="article in articles" :key="article._path" class="min-w-full">
           <a :href="article._path" class="min-w-full">
-            <!--          <div class="border">-->
-            <!--            <h3>{{ article.title }}</h3>-->
-            <!--            <p>{{ article.description }}</p>-->
-            <!--            <span>{{ article.publishedAt }}</span>-->
-            <!--          </div>-->
             <BlogsCard :article="article"></BlogsCard>
           </a>
         </div>
       </div>
-
-<!--      <div v-for="article in articles" :key="article._path" class="p-4">-->
-<!--        <a :href="article._path">-->
-<!--&lt;!&ndash;          <div class="border">&ndash;&gt;-->
-<!--&lt;!&ndash;            <h3>{{ article.title }}</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;            <p>{{ article.description }}</p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <span>{{ article.publishedAt }}</span>&ndash;&gt;-->
-<!--&lt;!&ndash;          </div>&ndash;&gt;-->
-<!--          <BlogsCard :article="article"></BlogsCard>-->
-<!--        </a>-->
-<!--      </div>-->
-      <!--      <ContentList path="/blogs" v-slot="{ list }">-->
-      <!--        <div v-for="article in list" :key="article._path">-->
-      <!--          <a :href="article._path">-->
-      <!--            <div class="border">-->
-      <!--              <h3>{{ article.title }}</h3>-->
-      <!--              <p>{{ article.description }}</p>-->
-      <!--            </div>-->
-      <!--          </a>-->
-      <!--        </div>-->
-      <!--      </ContentList>-->
     </div>
 
     <BlogsMore></BlogsMore>
