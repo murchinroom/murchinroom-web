@@ -11,7 +11,7 @@ definePageMeta({
     <div class="blog-content">
       <ContentDoc>
         <template v-slot="{ doc }">
-          <article>
+          <article class="max-md:max-w-full xl:max-w-screen-xl">
             <!--            <h1>{{ doc.title }}</h1>-->
             <ContentRenderer :value="doc"/>
           </article>
@@ -49,27 +49,69 @@ definePageMeta({
     padding-bottom: 10px;
   }
 
+  h1:hover:before {
+    content: "H1 ";
+    font-weight: lighter;
+    color: #999;
+    font-size: 65%;
+  }
+
   h2 {
     font-size: 1.75em;
     /*border-bottom: 1px solid #2c3e50;*/
     padding-bottom: 8px;
   }
 
+  h2:hover:before {
+    content: "H2 ";
+    font-weight: lighter;
+    color: #999;
+    font-size: 65%;
+  }
+
   h3 {
     font-size: 1.5em;
+  }
+
+  h3:hover:before {
+    content: "H3 ";
+    font-weight: lighter;
+    color: #999;
+    font-size: 65%;
   }
 
   h4 {
     font-size: 1.25em;
   }
 
+  h4:hover:before {
+    content: "H4 ";
+    font-weight: lighter;
+    color: #999;
+    font-size: 65%;
+  }
+
   h5 {
     font-size: 1em;
+  }
+
+  h5:hover:before {
+    content: "H5 ";
+    font-weight: lighter;
+    color: #999;
+    font-size: 65%;
   }
 
   h6 {
     font-size: 0.875em;
     color: #666;
+  }
+
+  h6:hover:before {
+    content: "H6 ";
+    font-weight: lighter;
+    color: #999;
+    font-size: 65%;
   }
 
   /* Paragraphs */
@@ -132,5 +174,60 @@ definePageMeta({
     margin: 0;
     color: #666;
   }
+
+  /* Images */
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  /* GitHub Style Tables */
+
+  table {
+    padding: 0;
+    word-break: initial;
+
+    /* centering the tab: margin-left: auto; margin-right: auto; */
+    margin: 16px auto;
+    place-self: center;
+  }
+
+  table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #f8f8f8;
+  }
+
+  table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+  }
+
+  table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+  }
+
+  table tr th:first-child,
+  table tr td:first-child {
+    margin-top: 0;
+  }
+
+  table tr th:last-child,
+  table tr td:last-child {
+    margin-bottom: 0;
+  }
+
 }
 </style>
