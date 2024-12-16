@@ -34,7 +34,7 @@ const [prevArticle, nextArticle] = await queryContent()
       <ContentDoc>
         <template v-slot="{ doc }">
           <div class="order-2 lg:order-1 blog-content flex-1 max-md:max-w-full xl:max-w-screen-xl">
-            <article>
+            <article class="md:max-w-screen-md lg:max-w-screen-md">
               <ContentRenderer :value="doc"/>
             </article>
           </div>
@@ -53,7 +53,7 @@ const [prevArticle, nextArticle] = await queryContent()
 <style>
 .blog-content {
   /* General styles */
-  font-family: 'Computer Modern', 'PT Serif', 'Times New Roman', Times, serif;
+  font-family: ui-serif, serif;
   line-height: 1.6;
   color: #333;
   /*background-color: #f4f4f9;*/
@@ -159,7 +159,7 @@ const [prevArticle, nextArticle] = await queryContent()
   /* Code blocks */
 
   pre, code {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: ui-monospace, monospace;
     background-color: #f4f4f9;
     padding: 5px;
     border-radius: 4px;
