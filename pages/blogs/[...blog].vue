@@ -1,7 +1,29 @@
-<script setup>
+<script setup lang="ts">
+import type {QueryBuilderParams} from "@nuxt/content";
+
 definePageMeta({
   layout: "landing",
 });
+
+interface surroundArticle {
+  title: string,
+  _path: string,
+}
+
+const route = useRoute()
+
+const [prevArticle, nextArticle] = await queryContent()
+    .only(['_path', 'title'])
+    .sort({"publishedAt": -1})
+    .where({
+      "publishedAt": {$exists: true},
+      "_draft": false,
+    })
+    .findSurround(route.path);
+
+// console.log("prevBlog", prevBlog);
+// console.log("nextBlog", nextBlog);
+
 </script>
 
 <template>
@@ -24,6 +46,7 @@ definePageMeta({
         <template #not-found><h1>Document not found</h1></template>
       </ContentDoc>
     </div>
+    <LazyBlogsSurround :nextArticle="nextArticle" :prevArticle="prevArticle"></LazyBlogsSurround>
   </LandingContainer>
 </template>
 
