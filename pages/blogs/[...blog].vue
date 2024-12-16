@@ -8,20 +8,22 @@ definePageMeta({
   <LandingContainer>
     <!--    <BlogsHero></BlogsHero>-->
     <BlogsNavbar></BlogsNavbar>
-    <div class="blog-content">
+    <div class="blog-page flex flex-col lg:flex-row">
       <ContentDoc>
         <template v-slot="{ doc }">
-          <article class="max-md:max-w-full xl:max-w-screen-xl">
-            <!--            <h1>{{ doc.title }}</h1>-->
-            <ContentRenderer :value="doc"/>
-          </article>
+          <div class="order-2 lg:order-1 blog-content flex-1 max-md:max-w-full xl:max-w-screen-xl">
+            <article>
+              <ContentRenderer :value="doc"/>
+            </article>
+          </div>
+          <!-- todo: sticky -->
+          <div class="order-1 lg:order-2 blog-toc lg:ml-4 max-lg:mb-0 lg:mb-4 lg:w-1/4 lg:right-4 lg:mt-16 max-lg:mt-4 lg:sticky lg:top-0">
+            <BlogsToc :article="doc"/>
+          </div>
         </template>
-        <template #not-found>
-          <h1>Document not found</h1>
-        </template>
+        <template #not-found><h1>Document not found</h1></template>
       </ContentDoc>
     </div>
-    <!--    <BlogsMore></BlogsMore>-->
   </LandingContainer>
 </template>
 
@@ -229,5 +231,32 @@ definePageMeta({
     margin-bottom: 0;
   }
 
+}
+</style>
+
+<style scoped>
+.blog-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-content {
+  flex: 1;
+}
+
+.blog-toc {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .blog-page {
+    flex-direction: row;
+  }
+
+  .blog-toc {
+    margin-left: 1rem;
+    width: 25%;
+  }
 }
 </style>
