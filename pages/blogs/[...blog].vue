@@ -29,12 +29,12 @@ const [prevArticle, nextArticle] = await queryContent()
 <template>
   <LandingContainer>
     <!--    <BlogsHero></BlogsHero>-->
-    <BlogsNavbar></BlogsNavbar>
+    <BlogsNavbar class="lg:ml-8"></BlogsNavbar>
     <div class="blog-page flex flex-col lg:flex-row">
       <ContentDoc>
         <template v-slot="{ doc }">
           <div class="order-2 lg:order-1 blog-content flex-1 max-md:max-w-full xl:max-w-screen-xl">
-            <article class="md:max-w-screen-md lg:max-w-screen-md">
+            <article class="md:ml-4 md:max-w-screen-md lg:max-w-screen-md">
               <ContentRenderer :value="doc"/>
             </article>
           </div>
@@ -163,12 +163,14 @@ const [prevArticle, nextArticle] = await queryContent()
     background-color: #f4f4f9;
     padding: 5px;
     border-radius: 4px;
+    font-size: 94%;
   }
 
   pre {
     overflow: auto;
-    padding: 10px;
+    padding: 2px 10px;
     border: 1px solid #ddd;
+    border-radius: 8px;
   }
 
   code {
@@ -182,8 +184,16 @@ const [prevArticle, nextArticle] = await queryContent()
     padding-left: 20px;
   }
 
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
   li {
-    margin: 5px 0;
+    margin: 4px 0;
   }
 
   /* Blockquotes */
