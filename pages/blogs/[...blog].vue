@@ -13,8 +13,6 @@ interface surroundArticle {
 const route = useRoute()
 
 const [prevArticle, nextArticle] = await queryContent()
-    .only(['_path', 'title'])
-    .sort({"publishedAt": -1})
     .where({
       "publishedAt": {$exists: true},
       "_draft": false,
@@ -43,7 +41,25 @@ const [prevArticle, nextArticle] = await queryContent()
             <BlogsToc :article="doc"/>
           </div>
         </template>
-        <template #not-found><h1>Document not found</h1></template>
+
+        <template #not-found>
+          <div class="flex flex-col my-16 mx-auto text-center font-mono text-orange-600">
+            <span class="flex-1 text-lg">Page not found.</span>
+            <a class="flex-1 my-4 mx-auto text-center" href="/blogs">
+              <Icon name="bx:bxs-left-arrow" class="h-5 w-5"></Icon>
+            </a>
+          </div>
+        </template>
+
+        <template #empty>
+          <div class="flex flex-col my-16 mx-auto text-center font-mono text-orange-600">
+            <span class="flex-1 text-lg">Document is empty.</span>
+            <a class="flex-1 my-4 mx-auto text-center" href="/blogs">
+              <Icon name="bx:bxs-left-arrow" class="h-5 w-5"></Icon>
+            </a>
+          </div>
+        </template>
+
       </ContentDoc>
     </div>
     <LazyBlogsSurround :nextArticle="nextArticle" :prevArticle="prevArticle"></LazyBlogsSurround>

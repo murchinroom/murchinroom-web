@@ -34,8 +34,8 @@ const articles = useAsyncData('blogsQuery',
     <!--      Blog index page.-->
     <!--    </div>-->
     <div class="mx-auto font-mono text-center">
-      <div v-if="(articles?.length ?? -1) <= 0" class="mx-auto font-mono text-center text-orange-600">
-        No articles found.
+      <div v-if="(articles?.length ?? -1) <= 0" class="mx-auto font-mono text-center text-lg text-orange-600">
+        There is no publicly accessible blog content for the time being.
       </div>
 
       <!-- Card Grid -->
