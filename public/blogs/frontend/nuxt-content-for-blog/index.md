@@ -18,7 +18,7 @@ Nuxt 在官网给自己贴的标签是 「The Intuitive Vue Framework」。实�
 
 目前新的 [murchinroom 主页](https://www.murchinroom.fun)就是徒手 Tailwind 的一个例子（也不能说完全徒手叭，还是上了模版的）。
 
-![murchinroom 主页截图](attachments/nuxt-content-for-blog/murchinroom-web-homepage.png)
+![murchinroom 主页截图](attachments/murchinroom-web-homepage.png)
 但前面说的这些都**不是**重点。只是好长时间没写过东西了，单纯想唠叨一下，诶嘿。
 
 总之，这篇文章要讲的故事是，为了给这个新的 murchinroom 主页增加博客功能，我研究了一下 Nuxt Content。 
@@ -38,7 +38,7 @@ Nuxt 在官网给自己贴的标签是 「The Intuitive Vue Framework」。实�
 
 总之就是说，这东西能从你 src 里读 Markdown 文档，和一些数据文件，形成渲染好的页面，提供查询和展示功能。具体来说，对于我们的博客建设需求，就可以把博客内容的 Markdown 文档，放到站点源码的 `blogs/` 目录里，编译时，Nuxt Content 会把这些 markdown 一并渲染好，成为站点的博客内容页面。整个过程相当静态，有一种编译 Go 语言程序，在其中 embed 一些 static 内容的美感。
 
-![Nuxt Content 工作流程示意图，总之就是前一段文本的内容画成了一个丑陋的示意图，不重要。](attachments/nuxt-content-for-blog/NuxtContent.png)
+![Nuxt Content 工作流程示意图，总之就是前一段文本的内容画成了一个丑陋的示意图，不重要。](attachments/NuxtContent.png)
 
 由于官方的文档有一点点草率，例子和脚手架参考价值都有限。所以还是自己写一篇介绍一下我的实践。
 
@@ -328,14 +328,14 @@ touch 'pages/[...slug].vue'
 
 如果不出意外，你会看到一个朴素页面（下面这个截图我甚至没配代码块语法高亮所以显得更加素了）：
 
-![Nuxt Content 渲染出的博客内容页面截图，显示效果是未经 CSS 修饰的裸 HTML 样式](attachments/nuxt-content-for-blog/nuxt-content-default-page.png)
+![Nuxt Content 渲染出的博客内容页面截图，显示效果是未经 CSS 修饰的裸 HTML 样式](attachments/nuxt-content-default-page.png)
 
 虽然比较寡淡，但核心功能是有了，接下来亿点点优化就行。参考其他正常的博客，我们添加以下两个常见功能：
 
 - 索引页：从新到旧罗列的文章列表；
 - 前后篇：一篇文章读完后，下面有个链接指向前一篇、后一篇，或者相关的文章。
 
-![两个博客站点的截图，展示了 Swift 语言博客的索引页和 Go 语言博客中的 Next article 和 Previous article 链接](attachments/nuxt-content-for-blog/example-blogs-index-and-surround.png)
+![两个博客站点的截图，展示了 Swift 语言博客的索引页和 Go 语言博客中的 Next article 和 Previous article 链接](attachments/example-blogs-index-and-surround.png)
 
 ### 索引页
 
@@ -427,11 +427,11 @@ const articles = await queryContent('/blogs')
 
 一个简单的索引（或者说导航）页就有了（下面这个截图我加了一个边框和一些 debug 信息，为了保持简洁上面的代码实现略去了这些无关紧要的东西）：
 
-![实现的索引页截图](attachments/nuxt-content-for-blog/nuxt-content-basic-blogs-index-page.png)
+![实现的索引页截图](attachments/nuxt-content-basic-blogs-index-page.png)
 
 按照你的喜好，稍微修改一下样式，就可以得到一个基本可用的页面了。例如，目前 murchinroom 的博客索引页：
 
-![murchinroom 的 blogs 索引页截图](attachments/nuxt-content-for-blog/murchinroom-blogs-index-page.png)
+![murchinroom 的 blogs 索引页截图](attachments/murchinroom-blogs-index-page.png)
 
 其实就是把前面代码中 `<a>` 里面的东西换成了一个卡片组件来显示文章对象 `components/blogs/Card.vue`（请务必原谅丑陋的大段 Tailwind CSS 魔法，托付给大模型写的东西就是这样的）：
 
@@ -547,7 +547,7 @@ const [prevArticle, nextArticle] = await queryContent("/blogs")
 
 效果大概是这样：
 
-![博客页面的截图，文章最后有新增的下一篇、上一篇的链接。](attachments/nuxt-content-for-blog/nuxt-content-basic-blogs-surround.png)
+![博客页面的截图，文章最后有新增的下一篇、上一篇的链接。](attachments/nuxt-content-basic-blogs-surround.png)
 同样，你按照自己的喜好，进行一些样式的自定义就能实际用了。例如 murchinroom 的实现（同样拜托给大模型写出的核心组件 `components/blogs/Surround.vue`）：
 
 ```vue
@@ -586,7 +586,7 @@ defineProps<{
 
 跑起来的效果是这样（有一说一这个好丑啊，迟早得给他重写了😠）：
 
-![murchinroom 的前一篇、后一篇链接卡片截图](attachments/nuxt-content-for-blog/murchinroom-blog-surround.png)
+![murchinroom 的前一篇、后一篇链接卡片截图](attachments/murchinroom-blog-surround.png)
 ## 尾声
 
 现在，基础博客功能现在已经有比较完整了。
@@ -599,7 +599,7 @@ defineProps<{
 
 例如，在 murchinroom 的博客页面中，我们还实现了文章大纲（TOC）和一个导航栏（这个也很丑，我最不满意的是这个，巨硬家的 Copilot 写代码就是逊啦），并且重写了一组 CSS 来优化正文显示效果：
 
-![](attachments/nuxt-content-for-blog/murchinroom-blog-toc-and-navbar.png)
+![](attachments/murchinroom-blog-toc-and-navbar.png)
 
 总之，就看你喜好，自己往里面加东西就行了。
 
