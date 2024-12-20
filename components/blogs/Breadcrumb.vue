@@ -6,18 +6,18 @@
 
           <!-- for larger screens: show the full path -->
           <span class="max-md:hidden flex items-center">
-            <span v-if="index > 0" class="mx-1">></span>
+            <span v-if="index > 0" class="ml-0.5 mr-2">></span>
             <span @click="toggleTreeView(item._path)" :class="{'truncate max-w-xs mx-1 font-bold text-black cursor-default': item._path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item._path !== $route.path}">
-              <Icon :name="item.children ? 'bx:bxs-folder-open' : 'bx:bxs-file'" class="mr-0.5 mb-1.5 inline-block align-middle"/>
+              <Icon :name="item.children ? 'bx:bxs-folder-open' : 'bx:bxs-file'" class="mx-0.5 mb-1 inline-block align-middle"/>
               {{ item.title }}
             </span>
           </span>
 
           <!-- for small screens: fold the mid dirs -->
           <span class="md:hidden flex items-center" v-if="index === 0 || index >= breadcrumbs.length-2">
-            <span v-if="index > 0" class="mx-1">></span>
+            <span v-if="index > 0" class="ml-0.5 mr-2">></span>
             <span @click="toggleTreeView(item._path)" :class="{'truncate max-w-xs mx-1 font-bold text-black cursor-default': item._path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item._path !== $route.path}">
-              <Icon :name="item.children ? 'bx:bxs-folder-open' : 'bx:bxs-file'" class="mr-0.5 mb-1.5 inline-block align-middle"/>
+              <Icon :name="item.children ? 'bx:bxs-folder-open' : 'bx:bxs-file'" class="mr-0.5 mb-1 inline-block align-middle"/>
               <span v-if="index === 0 || index === breadcrumbs.length-1">{{ item.title }}</span>
               <span v-else>..</span>
             </span>
