@@ -11,17 +11,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
@@ -29,58 +19,12 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
 ## Production
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## Static Site Generation
-
-Docs: [Static Hosting](https://nuxt.com/docs/getting-started/deployment#static-hosting)
+Build for production with static site generation:
 
 ```bash
 pnpm nuxi generate
@@ -88,6 +32,15 @@ pnpm nuxi generate
 pnpm run generate-static
 ```
 
+Docs: [Static Hosting](https://nuxt.com/docs/getting-started/deployment#static-hosting)
+
 ## Template
 
 This site is built with [Gr33nW33n/nuxtship-template](https://github.com/Gr33nW33n/nuxtship-template)
+
+## Blogs
+
+[Nuxt Content](https://content.nuxt.com) is set up to read 
+Markdown articles from [`public/blogs`](public/blogs).
+
+See also: [public/blogs/.README.md](public/blogs/.README.md)
