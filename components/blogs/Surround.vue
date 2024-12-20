@@ -22,17 +22,18 @@
 </template>
 
 <script setup lang="ts">
+import {type ParsedContent} from "@nuxt/content";
 
-interface Article {
-  title: string,
-  _path: string,
+interface ArticleMetadata {
+  title?: string,
+  _path?: string,
   // description?: string,
   // publishedAt?: string,
 }
 
 defineProps<{
-  prevArticle?: Article
-  nextArticle?: Article
+  prevArticle?: ArticleMetadata
+  nextArticle?: ArticleMetadata
 }>()
 
 </script>

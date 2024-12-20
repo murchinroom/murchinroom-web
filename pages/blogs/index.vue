@@ -1,27 +1,27 @@
 <script setup lang="ts">
 import {queryContent} from "#imports";
-import type {QueryBuilderParams} from "@nuxt/content";
 
 definePageMeta({
   layout: "landing",
 });
 
-const query: QueryBuilderParams = {path: '/blogs', sort: [{publishedAt: -1}]}
-
 // const articles = await queryContent(query).find()
 // wrap in useAsyncData to prevent fetching duplication on first load.
-const articles = useAsyncData('blogsQuery',
-    () => {
-      return queryContent(query)
+const { data: articleResult } = await useAsyncData('blogsQuery',
+    async () => {
+      return queryContent("/blogs")
           .where({
             "publishedAt": {$exists: true},
             "_draft": false,
           })
           .without("body") // exclude article content
+          .sort({"publishedAt": -1})
           .limit(100)
           .find();
     }
-).data;
+);
+
+const articles = computed(() => articleResult.value);
 
 // console.log("articles", articles, articles.value?.length)
 

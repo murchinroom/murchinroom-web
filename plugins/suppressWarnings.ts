@@ -17,7 +17,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                     return;
                 }
             } catch {
-                /* continue; */
+                /* pass; */
             }
         }
 

@@ -1,26 +1,33 @@
 <script setup lang="ts">
-import type {QueryBuilderParams} from "@nuxt/content";
+import {queryContent} from "#imports";
 
 definePageMeta({
   layout: "landing",
 });
 
-interface surroundArticle {
-  title: string,
-  _path: string,
-}
+const route = useRoute();
 
-const route = useRoute()
+const {data: surroundResult} = await useAsyncData('blogsSurround:' + route.path,
+    async () => {
+      return queryContent()
+          .where({
+            "publishedAt": {$exists: true},
+            "_draft": false,
+          })
+          .without("body")
+          .sort({"publishedAt": -1})
+          .findSurround(route.path);
+    }
+);
 
-const [prevArticle, nextArticle] = await queryContent()
-    .where({
-      "publishedAt": {$exists: true},
-      "_draft": false,
-    })
-    .findSurround(route.path);
+// console.log("surroundResult", surroundResult);
+// console.log("surroundResult.value", surroundResult.value);
 
-// console.log("prevBlog", prevBlog);
-// console.log("nextBlog", nextBlog);
+const prevArticle = computed(() => surroundResult?.value ? surroundResult.value[0] : undefined);
+const nextArticle = computed(() => surroundResult?.value ? surroundResult.value[1] : undefined);
+
+// console.log("prevArticle", prevArticle);
+// console.log("nextArticle", nextArticle);
 
 </script>
 
@@ -62,7 +69,7 @@ const [prevArticle, nextArticle] = await queryContent()
 
       </ContentDoc>
     </div>
-    <LazyBlogsSurround :nextArticle="nextArticle" :prevArticle="prevArticle"></LazyBlogsSurround>
+    <LazyBlogsSurround :prevArticle="prevArticle" :nextArticle="nextArticle"></LazyBlogsSurround>
   </LandingContainer>
 </template>
 
@@ -279,7 +286,6 @@ const [prevArticle, nextArticle] = await queryContent()
   table tr td:last-child {
     margin-bottom: 0;
   }
-
 }
 </style>
 

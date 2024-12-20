@@ -28,7 +28,7 @@ export default defineNuxtConfig({
       }
     },
     navigation: {
-      fields: ['updated']
+      fields: ['publishedAt']
     },
     markdown: {
       rehypePlugins: {
