@@ -609,3 +609,75 @@ defineProps<{
 <p from="CDFMLR">Bye.</p>
 <pre>2024.12.19</pre>
 ```
+
+## 更新：内容目录组织和相对路径图片
+
+> Update: 2024-12-21
+
+不出意外，系统上线必 bug。这个粗制滥造的 blog 系统当然更更逃不过这种恶毒的诅咒啦——自食狗粮哪有不噎的！！
+
+当这篇文章作为 [murchinroom-web 的第一篇博客](https://www.murchinroom.fun/blogs/frontend/nuxt-content-for-blog) 发出后，就遇到了图片显示不出来的问题。
+
+虽然把 source 放到 `public/` 下，Markdown 就可以通过相对路径，引用自己身旁的图片了。这个没问题。但是，渲染后的页面通过相对路径请求图片时，可能会错误多带了一级路径。例如，我们的博客内容一开始是这么组织的：
+
+```
+public/blogs/
+    +-- subdir/
+        +-- article.md
+        +-- attachments/
+            +-- img.png
+```
+
+Nuxt Content 会让 `subdir/article.md` 这篇文章将可以在以下两个路径访问：
+
+- `/blogs/subdir/article`
+- `/blogs/subdir/article/`
+
+考虑文章中的一个相对链接 `![](attachments/img.png)` ，
+
+- 通过 `/blogs/subdir/article` 访问文章时，相对链接会被解析为 `subdir/attachments/a.png`，这是预期的行为，访问到了正确的图像。
+- 而对于 `/blogs/subdir/article/`，相对链接 `![](attachments/a.png)` 会基于当前文章的路由，被解释为 `subdir/article/attachments/a.png`，注意这就多了一层，访问到不存在的文件了，导致图片显示不出来。
+
+你可能觉得，那我们不要访问带 `/` 后缀的地址不就行了。对，我也一直是这么考虑的。但是——
+
+把这个问题推向风口浪尖，以至于必须从根本解决这个问题的事实是：怎么对待尾部的 `/` 是取决于 web 服务器的，例如本地开发环境 `pnpm run dev` 是区分两种情况的；而部署到 GitHub Pages 时，不管你加不加 `/` 他都会访问到带 `/` 的地址。
+
+### Quick fix
+
+这个问题可以通过调整内容目录的组织方式来规避。
+
+> 文档: https://content.nuxt.com/usage/content-directory#paths
+
+添加一级“文章目录”，并把 Markdown 文件命名为 `index.md` ：
+
+|     | 修改前                        | 修改后                                |
+| --- | -------------------------- | ---------------------------------- |
+| 文章  | `subdir/article.md`        | `subdir/article/index.md`          |
+| 图片  | `subdir/attachments/*.png` | `subdir/article/attachments/*.png` |
+
+这是修改后的目录结构：
+
+```
+public/blogs/
+	+-- article-name/
+		+-- index.md  # ![](attachments/img.png)
+		+-- attachments/
+		    +-- img.png
+```
+
+- 类似于 web 服务器对 `index.html` 的处理，Nuxt Content 会把 `subdir/index.md` 的路径设为 `subdir/`。文章仍然可以在以下两个路径访问：
+    - `/blogs/subdir/article`
+    - `/blogs/subdir/article/`
+- 但在这两种情况下，相对链接 `![](attachments/img.png)` 都会从 `index.md` 所在的目录出发，被正确解析为我们希望的 `subdir/article/attachments/img.png`。
+
+改成这个样子之后，图片相对链接就好了。以后的文章都遵循这个约定也就没问题了。
+
+### TODO：根本解决
+
+这个问题的本源还是服务器对 HTTP URL 和系统对文件路径解释的分歧造成的。
+
+所以要从根本上避免这个问题，一种方式是考虑在访问文章之前，遍历修改文章中的链接，把相对路径（`attachments/img.png`）重写为以站点根目录开头的绝对路径（`/blogs/subdir/attachments/img.png`）。
+
+Nuxt Content 提供了 [Hook](https://content.nuxt.com/recipes/hooks) 功能，似乎可以来做这个事情。但我浅尝未果。
+
+总之先这样吧。如果你能成功实现更好的解决方案请务必教我。
