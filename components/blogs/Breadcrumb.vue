@@ -8,7 +8,7 @@
           <span class="max-md:hidden flex items-center">
             <span v-if="index > 0" class="ml-0.5 mr-2">></span>
             <span @click="toggleTreeView(item._path)" :class="{'truncate max-w-xs mx-1 font-bold text-black cursor-default': item._path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item._path !== $route.path}">
-              <Icon :name="item.children ? 'bx:bxs-folder-open' : 'bx:bxs-file'" class="mx-0.5 mb-1 inline-block align-middle"/>
+              <Icon :name="isDir(item) ? 'bx:bxs-folder-open' : 'bx:bxs-file'" class="mx-0.5 mb-1 inline-block align-middle"/>
               {{ item.title }}
             </span>
           </span>
@@ -57,6 +57,18 @@ export default defineComponent({
       });
     };
 
+    const isDir = (item) => {
+      if (item.children && item.children.length > 1) {
+        return true;
+      }
+      // articleName/index.md: treat the dir as the article
+      if (item.children && item.children[0]._path === item._path) {
+        return false;
+      }
+      return item.children;
+    }
+
+
     const toggleTreeView = (path) => {
       expandPath.value = path;
       showTreeView.value = !showTreeView.value;
@@ -80,7 +92,7 @@ export default defineComponent({
       buildBreadcrumbs(newNavigation);
     }, {immediate: true});
 
-    return {breadcrumbs, showTreeView, expandPath, toggleTreeView, breadcrumbContainer};
+    return {breadcrumbs, showTreeView, expandPath, isDir, toggleTreeView, breadcrumbContainer};
   }
 });
 </script>

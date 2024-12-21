@@ -3,19 +3,19 @@
     <li v-for="item in items" :key="item._path" class="ml-4">
       <div class="flex items-center">
         <span @click="toggleOrNavigate(item)" :class="{'font-bold text-black cursor-default': item._path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item._path !== $route.path}">
-          <Icon :name="item.children ? ((item.expanded || shouldExpand(item._path)) ? 'bx:bxs-folder-open' : 'bx:bxs-folder') : 'bx:bxs-file'" class="mr-0.5 mb-1 inline-block align-middle" />
+          <Icon :name="!isArticle(item) ? ((item.expanded || shouldExpand(item)) ? 'bx:bxs-folder-open' : 'bx:bxs-folder') : 'bx:bxs-file'" class="mr-0.5 mb-1 inline-block align-middle" />
 <!--          <span v-if="item.children" class="mr-2">{{ item.expanded || shouldExpand(item._path) ? '˅' : '˃' }}</span> &lt;!&ndash; Arrow icons &ndash;&gt;-->
           {{ item.title }}
         </span>
       </div>
-      <div v-if="item.children && (item.expanded || shouldExpand(item._path))">
+      <div v-if="item.children && (item.expanded || shouldExpand(item))">
         <BlogsTreeView :items="item.children" :expandPath="expandPath" />
       </div>
     </li>
   </ul>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
@@ -39,19 +39,29 @@ export default defineComponent({
     };
 
     const toggleOrNavigate = (item) => {
-      if (item.children) {
-        item.expanded = !item.expanded;
-      } else {
+      if (isArticle(item)) {
         navigateTo(item._path);
+      } else {
+        item.expanded = !item.expanded;
       }
     };
 
-    // shouldExpand prevents user to fold the dir containing current article.
-    const shouldExpand = (path) => {
-      return props.expandPath.startsWith(path);
+    const isArticle = (item) => {
+      if (!item.children) {
+        return true;
+      }
+      if (item.children.length === 1 && item.children[0]._path === item._path) {
+        return true;
+      }
+      return false;
     };
 
-    return { navigateTo, toggleOrNavigate, shouldExpand, route };
+    // shouldExpand prevents user to fold the dir containing current article.
+    const shouldExpand = (item) => {
+      return !isArticle(item) && props.expandPath.startsWith(item._path);
+    };
+
+    return { navigateTo, toggleOrNavigate, isArticle, shouldExpand, route };
   },
 
 });
