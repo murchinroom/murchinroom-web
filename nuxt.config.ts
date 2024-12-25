@@ -10,7 +10,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["nuxt-icon", "@nuxt/content"],
+  modules: ["nuxt-icon", "@nuxt/content", "@nuxtjs/seo"],
+  site: {
+    url: "www.murchinroom.fun",
+  },
   content: {
     sources: {
       // default source is the `content` directory: not used.
