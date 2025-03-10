@@ -14,6 +14,11 @@ export default defineNuxtConfig({
   site: {
     url: "www.murchinroom.fun",
   },
+  app: {
+    head: {
+      title: "murchinroom | A magic shop where AI meets Art",
+    }
+  },
   content: {
     sources: {
       // default source is the `content` directory: not used.
