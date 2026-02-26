@@ -37,8 +37,6 @@
 </template>
 
 <script setup lang="ts">
-import {type ParsedContent} from "@nuxt/content";
-
 interface ArticleMetadata {
   title?: string,
   _path?: string,
