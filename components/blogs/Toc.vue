@@ -21,16 +21,27 @@
 </template>
 
 <script lang="ts" setup>
-import {type ParsedContent} from "@nuxt/content";
+interface TocLink {
+  id: string;
+  text: string;
+  depth: number;
+  children?: TocLink[];
+}
 
 interface ArticleMetadata {
   title?: string;
   description?: string;
   publishedAt?: string;
+  body?: {
+    toc?: {
+      links?: TocLink[];
+    };
+  };
+  [key: string]: unknown;
 }
 
 defineProps<{
-  article?: ArticleMetadata & ParsedContent;
+  article?: ArticleMetadata;
 }>();
 
 const scrollToHeader = (id: string) => {

@@ -1,5 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { resolve } from "node:path";
+import { createRequire } from "node:module";
+
+// Fix nuxt-og-image@4.x incompatibility with unenv@2.x (Nitro 2.11+):
+// unenv@2.x changed its runtime path structure, so "unenv/runtime/mock/empty"
+// now resolves to a non-existent path. Override Nitro aliases to use the
+// correct path via "unenv/mock/empty" (which resolves correctly in unenv@2.x).
+function resolveUnenvMockEmpty(): string | undefined {
+  try {
+    const nuxtPkg = createRequire(import.meta.url).resolve("nuxt/package.json");
+    const nitroPkg = createRequire(nuxtPkg).resolve("nitropack/package.json");
+    return createRequire(nitroPkg).resolve("unenv/mock/empty");
+  } catch {
+    return undefined;
+  }
+}
+const unenvMockEmpty = resolveUnenvMockEmpty();
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -10,7 +26,32 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["nuxt-icon", "@nuxt/content", "@nuxtjs/seo"],
+  modules: [
+    "nuxt-icon",
+    "@nuxt/content",
+    "@nuxtjs/seo",
+    // Fix nuxt-og-image@4.x incompatibility with unenv@2.x (Nitro 2.11+):
+    // unenv@2.x changed runtime path structure; "unenv/runtime/mock/empty"
+    // no longer resolves to a valid file. Replace with the correct path.
+    ...(unenvMockEmpty
+      ? [
+          (_: unknown, nuxt: { hook: (event: string, cb: (...args: unknown[]) => void) => void }) => {
+            const fixAliases = (nitroConfig: { alias?: Record<string, string> }) => {
+              if (!nitroConfig.alias) return;
+              for (const key of Object.keys(nitroConfig.alias)) {
+                if (nitroConfig.alias[key] === "unenv/runtime/mock/empty") {
+                  nitroConfig.alias[key] = unenvMockEmpty!;
+                }
+              }
+            };
+            nuxt.hook("nitro:config", fixAliases as (...args: unknown[]) => void);
+            nuxt.hook("nitro:init", ((nitro: { hooks: { hook: (event: string, cb: (...args: unknown[]) => void) => void } }) => {
+              nitro.hooks.hook("prerender:config", fixAliases as (...args: unknown[]) => void);
+            }) as (...args: unknown[]) => void);
+          },
+        ]
+      : []),
+  ],
   site: {
     url: "www.murchinroom.fun",
   },
@@ -60,5 +101,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: "2024-12-14"
+  compatibilityDate: "2024-12-14",
 });
