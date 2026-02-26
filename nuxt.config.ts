@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     // no longer resolves to a valid file. Replace with the correct path.
     ...(unenvMockEmpty
       ? [
-          (_: unknown, nuxt: { hook: Function }) => {
+          (_: unknown, nuxt: { hook: (event: string, cb: (...args: unknown[]) => void) => void }) => {
             const fixAliases = (nitroConfig: { alias?: Record<string, string> }) => {
               if (!nitroConfig.alias) return;
               for (const key of Object.keys(nitroConfig.alias)) {
@@ -44,10 +44,10 @@ export default defineNuxtConfig({
                 }
               }
             };
-            nuxt.hook("nitro:config", fixAliases);
-            nuxt.hook("nitro:init", (nitro: { hooks: { hook: Function } }) => {
-              nitro.hooks.hook("prerender:config", fixAliases);
-            });
+            nuxt.hook("nitro:config", fixAliases as (...args: unknown[]) => void);
+            nuxt.hook("nitro:init", ((nitro: { hooks: { hook: (event: string, cb: (...args: unknown[]) => void) => void } }) => {
+              nitro.hooks.hook("prerender:config", fixAliases as (...args: unknown[]) => void);
+            }) as (...args: unknown[]) => void);
           },
         ]
       : []),
