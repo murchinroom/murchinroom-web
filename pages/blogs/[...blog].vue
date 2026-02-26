@@ -270,10 +270,6 @@ const nextArticle = computed(() => surroundResult?.value?.[1] ?? undefined);
   flex-direction: column;
 }
 
-.blog-content {
-  flex: 1;
-}
-
 .blog-toc {
   flex-shrink: 0;
   width: 100%;
