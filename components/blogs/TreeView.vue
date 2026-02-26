@@ -1,8 +1,8 @@
 <template>
   <ul class="p-2" >
-    <li v-for="item in items" :key="item._path" class="ml-4">
+    <li v-for="item in items" :key="item.path" class="ml-4">
       <div class="flex items-center">
-        <span @click="toggleOrNavigate(item)" :class="{'font-bold text-black cursor-default': item._path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item._path !== $route.path}">
+        <span @click="toggleOrNavigate(item)" :class="{'font-bold text-black cursor-default': item.path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item.path !== $route.path}">
           <Icon :name="!isArticle(item) ? ((item.expanded || shouldExpand(item)) ? 'bx:bxs-folder-open' : 'bx:bxs-folder') : 'bx:bxs-file'" class="mr-0.5 mb-1 inline-block align-middle" />
 <!--          <span v-if="item.children" class="mr-2">{{ item.expanded || shouldExpand(item._path) ? '˅' : '˃' }}</span> &lt;!&ndash; Arrow icons &ndash;&gt;-->
           {{ item.title }}
@@ -40,7 +40,7 @@ export default defineComponent({
 
     const toggleOrNavigate = (item) => {
       if (isArticle(item)) {
-        navigateTo(item._path);
+        navigateTo(item.path);
       } else {
         item.expanded = !item.expanded;
       }
@@ -50,7 +50,7 @@ export default defineComponent({
       if (!item.children) {
         return true;
       }
-      if (item.children.length === 1 && item.children[0]._path === item._path) {
+      if (item.children.length === 1 && item.children[0].path === item.path) {
         return true;
       }
       return false;
@@ -58,7 +58,7 @@ export default defineComponent({
 
     // shouldExpand prevents user to fold the dir containing current article.
     const shouldExpand = (item) => {
-      return !isArticle(item) && props.expandPath.startsWith(item._path);
+      return !isArticle(item) && props.expandPath.startsWith(item.path);
     };
 
     return { navigateTo, toggleOrNavigate, isArticle, shouldExpand, route };

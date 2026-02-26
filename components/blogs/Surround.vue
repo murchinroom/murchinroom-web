@@ -8,7 +8,7 @@
       <p v-if="nextArticle" class="text-slate-500 mt-8 text-lg md:text-xl inline-flex items-center line-clamp-1">
         <!--      <Icon class="h-8 m-2 text-slate-500" name="bx:bxs-chevron-left" size="24"/>-->
         <span class="mr-1">Next<span class="max-sm:hidden"> article</span>: </span>
-        <a :href="nextArticle?._path" class="text-slate-100 max-w-xs line-clamp-1 hover:underline">{{
+        <a :href="nextArticle?.path" class="text-slate-100 max-w-xs line-clamp-1 hover:underline">{{
             nextArticle.title
           }}</a>
       </p>
@@ -16,7 +16,7 @@
       <p v-if="prevArticle" class="text-slate-500 mt-4 text-lg md:text-xl inline-flex items-center line-clamp-1">
         <!--      <Icon class="h-8 m-2 text-slate-500" name="bx:bxs-chevron-right" size="24"/>-->
         <span class="mr-1">Previous<span class="max-sm:hidden"> article</span>: </span>
-        <a :href="prevArticle?._path" class="text-slate-100 max-w-xs line-clamp-1 hover:underline">{{
+        <a :href="prevArticle?.path" class="text-slate-100 max-w-xs line-clamp-1 hover:underline">{{
             prevArticle.title
           }}</a>
       </p>
@@ -37,18 +37,14 @@
 </template>
 
 <script setup lang="ts">
-import {type ParsedContent} from "@nuxt/content";
-
 interface ArticleMetadata {
   title?: string,
-  _path?: string,
-  // description?: string,
-  // publishedAt?: string,
+  path?: string,
+  children?: ArticleMetadata[],
 }
 
 defineProps<{
   prevArticle?: ArticleMetadata
   nextArticle?: ArticleMetadata
 }>()
-
 </script>

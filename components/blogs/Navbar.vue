@@ -1,18 +1,21 @@
 <template>
   <div>
-    <ContentNavigation v-slot="{ navigation }">
-      <div class="breadcrumb">
-        <BlogsBreadcrumb :navigation="navigation" />
-      </div>
-    </ContentNavigation>
+    <div class="breadcrumb">
+      <BlogsBreadcrumb :navigation="navigation ?? []" />
+    </div>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+const { data: navigation } = await useAsyncData('blogsNavigation',
+    () => queryCollectionNavigation('blogs', ['publishedAt'])
+);
 </script>
 
 <style scoped>
 .breadcrumb {
-  @apply flex items-center space-x-2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 </style>

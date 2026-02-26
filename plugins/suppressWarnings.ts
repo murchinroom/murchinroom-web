@@ -22,9 +22,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         }
 
         // WARN .png files are not supported, "blogs:blogs:test:test.png" falling back to raw content
-        if (msg.includes("files are not supported") && msg.includes("blogs") && msg.includes("falling back to raw content")) {
-            return;
-        }
+        // (content v2 specific - removed in v3)
 
         console.warn(msg, trace);
     }

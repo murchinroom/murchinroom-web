@@ -7,7 +7,7 @@
           <!-- for larger screens: show the full path -->
           <span class="max-md:hidden flex items-center">
             <span v-if="index > 0" class="ml-0.5 mr-2">></span>
-            <span @click="toggleTreeView(item._path)" :class="{'truncate max-w-xs mx-1 font-bold text-black cursor-default': item._path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item._path !== $route.path}">
+            <span @click="toggleTreeView(item.path)" :class="{'truncate max-w-xs mx-1 font-bold text-black cursor-default': item.path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item.path !== $route.path}">
               <Icon :name="isDir(item) ? 'bx:bxs-folder-open' : 'bx:bxs-file'" class="mx-0.5 mb-1 inline-block align-middle"/>
               {{ item.title }}
             </span>
@@ -16,7 +16,7 @@
           <!-- for small screens: fold the mid dirs -->
           <span class="md:hidden flex items-center" v-if="index === 0 || index >= breadcrumbs.length-2">
             <span v-if="index > 0" class="ml-0.5 mr-2">></span>
-            <span @click="toggleTreeView(item._path)" :class="{'truncate max-w-xs mx-1 font-bold text-black cursor-default': item._path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item._path !== $route.path}">
+            <span @click="toggleTreeView(item.path)" :class="{'truncate max-w-xs mx-1 font-bold text-black cursor-default': item.path === $route.path, 'cursor-pointer text-gray-600 hover:text-gray-900 hover:underline': item.path !== $route.path}">
               <Icon :name="item.children ? 'bx:bxs-folder-open' : 'bx:bxs-file'" class="mr-0.5 mb-1 inline-block align-middle"/>
               <span v-if="index === 0 || index === breadcrumbs.length-1">{{ item.title }}</span>
               <span v-else>..</span>
@@ -50,8 +50,8 @@ export default defineComponent({
       const pathParts = route.path.split('/').filter(Boolean);
       let currentLevel = navigation;
       breadcrumbs.value = pathParts.map(part => {
-        const item = currentLevel.find(navItem => navItem._path.split('/').pop() === part);
-        if (!item) return {title: part, _path: `/${part}`, children: []};
+        const item = currentLevel.find(navItem => navItem.path.split('/').pop() === part);
+        if (!item) return {title: part, path: `/${part}`, children: []};
         currentLevel = item.children || [];
         return item;
       });
@@ -62,7 +62,7 @@ export default defineComponent({
         return true;
       }
       // articleName/index.md: treat the dir as the article
-      if (item.children && item.children[0]._path === item._path) {
+      if (item.children && item.children[0].path === item.path) {
         return false;
       }
       return item.children;
@@ -99,7 +99,9 @@ export default defineComponent({
 
 <style scoped>
 nav {
-  @apply flex items-center space-x-2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .tree-panel {
@@ -116,7 +118,10 @@ span.truncate {
 }
 
 button {
-  @apply text-black bg-gray-200 rounded-full p-1;
+  color: #000;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  padding: 0.25rem;
 }
 
 .absolute {
