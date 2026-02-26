@@ -35,7 +35,7 @@
         <LandingIconLink
             class="font-mono max-sm:text-sm"
             style-name="outline"
-            href="https://github.com/cdfmlr/configer"
+            href="https://github.com/cdfmlr/smelt"
             icon="simple-icons:rust">
           cargo install --git https://github.com/cdfmlr/smelt
         </LandingIconLink>
